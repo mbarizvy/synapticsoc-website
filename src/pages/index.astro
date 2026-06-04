@@ -1,11 +1,102 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="/" aria-label="SynapticSOC home">
+        <img src="/assets/logos/synapticsoc-symbol.svg" alt="" />
+        <span>Synaptic<span class="brand-soc">SOC</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#project">The Project</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#journal">Build Journal</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <a
+        class="nav-github"
+        href="https://github.com/mbarizvy/synapticsoc-website"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Open-source SOC engineering project</p>
+
+          <h1>
+            Building a practical
+            <span>Security Operations Center</span>
+          </h1>
+
+          <p class="hero-copy">
+            SynapticSOC is an independently built cybersecurity engineering
+            project designed, integrated, and documented using real hardware,
+            real telemetry, and realistic resource constraints.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#architecture">
+              Explore the Architecture
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://github.com/mbarizvy/synapticsoc-website"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            class="hero-logo"
+            src="/assets/logos/synapticsoc-symbol.svg"
+            alt="SynapticSOC connected-node logo"
+          />
+
+          <span class="tool-label tool-pfsense">pfSense</span>
+          <span class="tool-label tool-wazuh">Wazuh</span>
+          <span class="tool-label tool-graylog">Graylog</span>
+          <span class="tool-label tool-n8n">n8n SOAR</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-strip">
+      <div class="container proof-grid">
+        <div class="proof-item">Network Telemetry</div>
+        <div class="proof-item">Endpoint Visibility</div>
+        <div class="proof-item">Correlation &amp; Triage</div>
+        <div class="proof-item">Evidence &amp; Response</div>
+      </div>
+    </section>
+
+    <section id="project" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">The Project</p>
+          <h2 class="section-title">A SOC built under real constraints</h2>
+          <p class="section-description">
+            SynapticSOC explores what it takes to make open-source security
+            tools function as one connected operational system, rather than a
+            collection of isolated dashboards.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
