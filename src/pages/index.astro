@@ -61,7 +61,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="hero-visual">
+        <div class="hero-visual" aria-label="SynapticSOC technology overview">
           <img
             class="hero-logo"
             src="/assets/logos/synapticsoc-symbol.svg"
@@ -76,7 +76,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <section class="proof-strip">
+    <section class="proof-strip" aria-label="Project capabilities">
       <div class="container proof-grid">
         <div class="proof-item">Network Telemetry</div>
         <div class="proof-item">Endpoint Visibility</div>
@@ -96,7 +96,203 @@ import Layout from '../layouts/Layout.astro';
             collection of isolated dashboards.
           </p>
         </div>
+
+        <div class="project-grid">
+          <article class="card project-card">
+            <div class="card-number">01 / Visibility</div>
+            <h3>Collect meaningful telemetry</h3>
+            <p>
+              Firewall, IDS, endpoint, and network visibility are brought
+              together to improve the quality of security decisions.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">02 / Correlation</div>
+            <h3>Validate alerts with context</h3>
+            <p>
+              Alerts are enriched and compared against pfSense, Zeek, Wazuh,
+              and Graylog evidence before an analyst response is recommended.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">03 / Workflow</div>
+            <h3>Document the analyst decision</h3>
+            <p>
+              Triage, acknowledgment, and response steps are designed to leave
+              a clear record of what was observed and why action was taken.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">Architecture</p>
+          <h2 class="section-title">A connected detection and triage stack</h2>
+          <p class="section-description">
+            The architecture is designed around telemetry quality, practical
+            integration, and clear analyst workflow.
+          </p>
+        </div>
+
+        <div class="architecture-panel">
+          <div class="card architecture-copy">
+            <h3>From raw events to analyst decisions</h3>
+
+            <ul>
+              <li>Collect network and endpoint telemetry</li>
+              <li>Parse and normalize events in Graylog</li>
+              <li>Detect activity through Wazuh, Snort, and Suricata</li>
+              <li>Validate visibility using Zeek and pfSense evidence</li>
+              <li>Enrich, triage, acknowledge, and retain the result</li>
+            </ul>
+          </div>
+
+          <div class="card architecture-flow">
+            <div class="flow-row">
+              <div class="flow-box">pfSense</div>
+              <div class="flow-box">Snort / Suricata</div>
+              <div class="flow-box">Wazuh Agents</div>
+            </div>
+
+            <div class="flow-row">
+              <div class="flow-box">Zeek</div>
+              <div class="flow-box flow-highlight">Graylog</div>
+              <div class="flow-box">OpenSearch</div>
+            </div>
+
+            <div class="flow-row">
+              <div class="flow-box">Enrichment</div>
+              <div class="flow-box flow-highlight">n8n Triage</div>
+              <div class="flow-box">Analyst Response</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">Current Capabilities</p>
+          <h2 class="section-title">Evidence instead of marketing claims</h2>
+          <p class="section-description">
+            The project is documented around capabilities that have been
+            implemented, observed, and validated.
+          </p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="card capability-card">
+            <strong>Firewall and IDS telemetry</strong>
+            <p>
+              Network events are collected from pfSense, Snort, and Suricata.
+            </p>
+          </article>
+
+          <article class="card capability-card">
+            <strong>Endpoint visibility</strong>
+            <p>
+              Wazuh agents provide host-level events, detections, and context.
+            </p>
+          </article>
+
+          <article class="card capability-card">
+            <strong>LAN-side validation</strong>
+            <p>
+              Zeek visibility helps determine whether observed traffic reached
+              an endpoint.
+            </p>
+          </article>
+
+          <article class="card capability-card">
+            <strong>SOAR-assisted triage</strong>
+            <p>
+              n8n workflows enrich alerts and support structured analyst
+              acknowledgment.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="journal" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">Build Journal</p>
+          <h2 class="section-title">Engineering decisions, documented</h2>
+          <p class="section-description">
+            The journal will document the problems, failures, decisions, and
+            lessons involved in building the project.
+          </p>
+        </div>
+
+        <div class="journal-grid">
+          <article class="card journal-card">
+            <div class="journal-meta">
+              <span>Coming Soon</span>
+              <span>Zeek Integration</span>
+            </div>
+
+            <h3>Integrating Zeek for LAN-side visibility</h3>
+
+            <p>
+              A practical account of the challenges involved in using Zeek to
+              validate whether IDS-observed traffic reached an internal host.
+            </p>
+          </article>
+
+          <article class="card journal-card">
+            <div class="journal-meta">
+              <span>Coming Soon</span>
+              <span>SOAR Design</span>
+            </div>
+
+            <h3>Designing a triage workflow under resource constraints</h3>
+
+            <p>
+              How enrichment, correlation, acknowledgment, and evidence
+              retention were approached without over-automating response.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">About SynapticSOC</p>
+          <h2 class="section-title">
+            A practical cybersecurity engineering project
+          </h2>
+
+          <p class="section-description">
+            SynapticSOC is built and documented as a technical portfolio,
+            learning platform, and foundation for future open-source SOC
+            research, education, and collaboration.
+          </p>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© 2026 SynapticSOC</span>
+
+      <div class="footer-links">
+        <a href="https://github.com/mbarizvy" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+
+        <a href="#project">The Project</a>
+        <a href="#architecture">Architecture</a>
+      </div>
+    </div>
+  </footer>
 </Layout>
