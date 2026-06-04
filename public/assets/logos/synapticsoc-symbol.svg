@@ -1,0 +1,64 @@
+<svg width="100%" viewBox="0 0 510 570" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">SynapticSOC logo symbol</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">SynapticSOC six-node hexagonal symbol with full interior connections matching original density</desc>
+
+  <rect width="500" height="560" fill="#070A12" style="fill:rgb(7, 10, 18);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <defs>
+    <linearGradient id="g" x1="250" y1="80" x2="250" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#072E73"/>
+      <stop offset="35%" stop-color="#23D9D9"/>
+      <stop offset="70%" stop-color="#7E10C2"/>
+    </linearGradient>
+  </defs>
+
+  <!--
+    Regular flat-top hexagon, center (250,260), radius 185:
+    TL = (157, 100)
+    TR = (343, 100)
+    R  = (435, 260)
+    BR = (343, 420)
+    BL = (157, 420)
+    L  = (65,  260)
+
+    All 15 possible connections between 6 nodes (fully connected graph):
+    Perimeter (6): TL-TR, TR-R, R-BR, BR-BL, BL-L, L-TL
+    Diagonals (9): TL-R, TL-BR, TL-BL(long), TR-BR(long), TR-L, TR-BL, R-BL, R-L(long), BR-L
+  -->
+
+  <!-- Perimeter edges - thick -->
+  <line x1="157" y1="100" x2="343" y2="100" stroke="url(#g)" stroke-width="5.5" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="343" y1="100" x2="435" y2="260" stroke="url(#g)" stroke-width="5.5" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="435" y1="260" x2="343" y2="420" stroke="url(#g)" stroke-width="5.5" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="343" y1="420" x2="157" y2="420" stroke="url(#g)" stroke-width="5.5" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="157" y1="420" x2="65" y2="260" stroke="url(#g)" stroke-width="5.5" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="65" y1="260" x2="157" y2="100" stroke="url(#g)" stroke-width="5.5" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- All interior diagonals - thin -->
+  <line x1="157" y1="100" x2="435" y2="260" stroke="url(#g)" stroke-width="2" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="157" y1="100" x2="343" y2="420" stroke="url(#g)" stroke-width="2" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="157" y1="100" x2="157" y2="420" stroke="url(#g)" stroke-width="2" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="343" y1="100" x2="343" y2="420" stroke="url(#g)" stroke-width="2" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="343" y1="100" x2="65" y2="260" stroke="url(#g)" stroke-width="2" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="343" y1="100" x2="157" y2="420" stroke="url(#g)" stroke-width="2" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="435" y1="260" x2="157" y2="420" stroke="url(#g)" stroke-width="2" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="435" y1="260" x2="65" y2="260" stroke="url(#g)" stroke-width="2" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="343" y1="420" x2="65" y2="260" stroke="url(#g)" stroke-width="2" stroke-linecap="round" style="fill:rgb(0, 0, 0);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+
+  <!-- Five interior intersection nodes - blue-cyan-purple gradient; geometry unchanged -->
+  <!-- Medium nodes: r=7.5 | Small nodes: r=5 -->
+  <circle cx="250" cy="153.52518" r="7.5" fill="url(#g)"/>
+  <circle cx="296.37466" cy="180.21563" r="5" fill="url(#g)"/>
+  <circle cx="157" cy="260" r="7.5" fill="url(#g)"/>
+  <circle cx="343" cy="312.94964" r="7.5" fill="url(#g)"/>
+  <circle cx="203.62534" cy="339.78437" r="5" fill="url(#g)"/>
+
+  <!-- Six nodes - all identical radius, drawn last -->
+  <circle cx="157" cy="100" r="14" fill="url(#g)" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="343" cy="100" r="14" fill="url(#g)" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="435" cy="260" r="14" fill="url(#g)" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="343" cy="420" r="14" fill="url(#g)" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="157" cy="420" r="14" fill="url(#g)" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="65" cy="260" r="14" fill="url(#g)" style="stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</svg>
