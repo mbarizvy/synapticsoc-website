@@ -57,6 +57,8 @@ a {
   margin: 0 auto;
 }
 
+/* ─── Header & Nav ─────────────────────────────────────────── */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -118,6 +120,8 @@ a {
   color: var(--text-primary);
   background: var(--surface);
 }
+
+/* ─── Hero ─────────────────────────────────────────────────── */
 
 .hero {
   padding: 104px 0 72px;
@@ -211,61 +215,228 @@ a {
   background: var(--surface);
 }
 
+/* ─── Hero Visual ───────────────────────────────────────────── */
+
 .hero-visual {
   position: relative;
-  min-height: 470px;
+  min-height: 0;
+  aspect-ratio: 7 / 5;
   border: 1px solid var(--border);
   border-radius: 28px;
   background:
-    linear-gradient(rgba(27, 39, 64, 0.25) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(27, 39, 64, 0.25) 1px, transparent 1px),
-    radial-gradient(circle at center, rgba(35, 217, 217, 0.08), transparent 52%),
+    radial-gradient(circle, rgba(35, 217, 217, 0.09) 1px, transparent 1.35px),
+    radial-gradient(circle at 50% 46%, rgba(35, 217, 217, 0.075), transparent 45%),
+    radial-gradient(circle at 83% 70%, rgba(126, 16, 194, 0.07), transparent 28%),
     var(--surface);
-  background-size: 32px 32px, 32px 32px, auto, auto;
+  background-size: 20px 20px, auto, auto, auto;
   box-shadow: var(--shadow);
   overflow: hidden;
 }
 
-.hero-logo {
-  position: absolute;
-  width: 250px;
-  height: 280px;
-  inset: 50%;
-  transform: translate(-50%, -50%);
-  object-fit: contain;
-  filter: drop-shadow(0 18px 32px rgba(30, 68, 204, 0.28));
+/* ─── Hero Workflow Visual ──────────────────────────────────── */
+
+.hero-workflow {
+  isolation: isolate;
 }
 
-.tool-label {
+.workflow-map {
   position: absolute;
-  padding: 8px 12px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--text-secondary);
-  background: rgba(13, 18, 32, 0.9);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.workflow-lane-guides path {
+  fill: none;
+  stroke: rgba(35, 217, 217, 0.055);
+  stroke-width: 18;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.workflow-line {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.55;
+  vector-effect: non-scaling-stroke;
+}
+
+.telemetry-line {
+  stroke: url(#workflow-telemetry);
+  marker-end: url(#workflow-arrow-telemetry);
+  opacity: 0.82;
+}
+
+.passive-line {
+  stroke: var(--cyan);
+  stroke-dasharray: 5 7;
+  marker-end: url(#workflow-arrow-passive);
+  opacity: 0.9;
+}
+
+.evidence-line {
+  stroke: #b68a51;
+}
+
+.workflow-pulse {
+}
+
+.telemetry-pulse {
+  fill: #78a6ff;
+  color: #78a6ff;
+}
+
+.passive-pulse {
+  fill: var(--cyan);
+  color: var(--cyan);
+}
+
+.workflow-node .node-shell,
+.workflow-node .node-icon-bg,
+.workflow-node .node-icon-ring,
+.workflow-node .node-icon-orbit,
+.workflow-node .node-icon-stroke,
+.workflow-node .node-icon-link,
+.workflow-node .port {
+  vector-effect: non-scaling-stroke;
+}
+
+.workflow-node .node-shell {
+  fill: #121a2b;
+  stroke: rgba(112, 132, 172, 0.5);
+  stroke-width: 1.15;
+}
+
+.workflow-node .node-icon-bg {
+  fill: #0d1b30;
+  stroke: rgba(35, 217, 217, 0.25);
+  stroke-width: 1;
+}
+
+.workflow-node .node-icon-stroke,
+.workflow-node .node-icon-link {
+  fill: none;
+  stroke: #9eb0d4;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.workflow-node .node-icon-ring,
+.workflow-node .node-icon-orbit {
+  fill: none;
+  stroke: rgba(35, 217, 217, 0.62);
+  stroke-width: 1.1;
+}
+
+.workflow-node text {
+  fill: var(--text-primary);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
+  font-weight: 500;
+  text-anchor: middle;
 }
 
-.tool-pfsense {
-  top: 15%;
-  left: 10%;
+.workflow-node .node-label {
+  font-size: 10.5px;
 }
 
-.tool-wazuh {
-  top: 20%;
-  right: 10%;
+.workflow-node .node-subtitle {
+  fill: var(--text-secondary);
+  font-size: 7.5px;
+  letter-spacing: 0.015em;
 }
 
-.tool-graylog {
-  bottom: 17%;
-  left: 11%;
+.source-node .node-shell {
+  fill: #101624;
+  stroke: rgba(112, 132, 172, 0.56);
 }
 
-.tool-n8n {
-  right: 12%;
-  bottom: 22%;
+.source-node .node-label {
+  fill: var(--text-secondary);
+  font-size: 9px;
 }
+
+.graylog-node .node-shell {
+  fill: url(#workflow-graylog-fill);
+  stroke: rgba(35, 217, 217, 0.88);
+  stroke-width: 1.7;
+}
+
+.graylog-node .hub-icon {
+  stroke: rgba(35, 217, 217, 0.48);
+}
+
+.graylog-node .hub-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.soar-node .node-shell {
+  fill: url(#workflow-soar-fill);
+  stroke: rgba(126, 16, 194, 0.95);
+  stroke-width: 1.6;
+}
+
+.soar-node .soar-icon {
+  stroke: rgba(126, 16, 194, 0.58);
+}
+
+.soar-node .soar-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.evidence-node .node-shell {
+  fill: #2c1f18;
+  stroke: rgba(182, 138, 81, 0.72);
+}
+
+.result-node .node-label {
+  font-size: 10px;
+}
+
+.node-icon-dot {
+  stroke: none;
+}
+
+.cyan-dot {
+  fill: var(--cyan);
+}
+
+.violet-dot {
+  fill: #9a5bd2;
+}
+
+.port {
+  fill: #667de5;
+  stroke: #0d1220;
+  stroke-width: 1.8;
+}
+
+.port-out {
+  fill: var(--cyan);
+}
+
+.passive-port {
+  fill: #74e6dc;
+  stroke: #0d1220;
+  stroke-width: 1.8;
+}
+
+.evidence-port {
+  fill: #b68a51;
+  stroke: #0d1220;
+  stroke-width: 1.8;
+}
+
+/* ─── Proof Strip ───────────────────────────────────────────── */
 
 .proof-strip {
   border-top: 1px solid var(--border);
@@ -292,6 +463,8 @@ a {
 .proof-item:last-child {
   border-right: 0;
 }
+
+/* ─── Sections ──────────────────────────────────────────────── */
 
 .section {
   padding: 96px 0;
@@ -324,6 +497,8 @@ a {
   color: var(--text-secondary);
   font-size: 1.02rem;
 }
+
+/* ─── Cards ─────────────────────────────────────────────────── */
 
 .project-grid,
 .capability-grid,
@@ -365,6 +540,8 @@ a {
   margin: 14px 0 0;
   color: var(--text-secondary);
 }
+
+/* ─── Architecture ──────────────────────────────────────────── */
 
 .architecture-panel {
   display: grid;
@@ -427,6 +604,8 @@ a {
   color: var(--text-primary);
 }
 
+/* ─── Capabilities ──────────────────────────────────────────── */
+
 .capability-grid {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -442,6 +621,8 @@ a {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.05rem;
 }
+
+/* ─── Journal ───────────────────────────────────────────────── */
 
 .journal-grid {
   grid-template-columns: repeat(2, 1fr);
@@ -461,6 +642,8 @@ a {
   text-transform: uppercase;
 }
 
+/* ─── Footer ────────────────────────────────────────────────── */
+
 .footer {
   padding: 40px 0;
   border-top: 1px solid var(--border);
@@ -478,6 +661,8 @@ a {
   gap: 18px;
 }
 
+/* ─── Responsive: 900px ─────────────────────────────────────── */
+
 @media (max-width: 900px) {
   .nav-links {
     display: none;
@@ -490,10 +675,6 @@ a {
   .hero-grid,
   .architecture-panel {
     grid-template-columns: 1fr;
-  }
-
-  .hero-visual {
-    min-height: 390px;
   }
 
   .project-grid,
@@ -515,6 +696,8 @@ a {
   }
 }
 
+/* ─── Responsive: 620px ─────────────────────────────────────── */
+
 @media (max-width: 620px) {
   .container {
     width: min(calc(100% - 28px), var(--max-width));
@@ -524,44 +707,117 @@ a {
     min-height: 64px;
   }
 
+  .brand {
+    gap: 9px;
+    font-size: 1.05rem;
+  }
+
+  .brand img {
+    width: 32px;
+    height: 32px;
+  }
+
   .nav-github {
-    display: none;
+    display: inline-flex;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+
+  .hero {
+    padding: 56px 0 52px;
   }
 
   .hero h1 {
-    font-size: clamp(2.7rem, 15vw, 4.2rem);
+    font-size: clamp(2.35rem, 12vw, 3.3rem);
+    line-height: 1;
+    letter-spacing: -0.065em;
+  }
+
+  .hero-copy {
+    margin-top: 22px;
+    font-size: 0.98rem;
+    line-height: 1.75;
   }
 
   .hero-actions {
     flex-direction: column;
+    margin-top: 28px;
   }
 
   .button {
     width: 100%;
+    min-height: 46px;
   }
 
   .hero-visual {
-    min-height: 330px;
+    border-radius: 22px;
   }
 
-  .hero-logo {
-    width: 190px;
-    height: 220px;
+  .section {
+    padding: 64px 0;
   }
 
-  .tool-label {
-    font-size: 0.62rem;
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 10vw, 2.65rem);
+    line-height: 1.08;
+  }
+
+  .section-description {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .project-card,
+  .architecture-copy,
+  .architecture-flow,
+  .capability-card,
+  .journal-card {
+    padding: 22px;
+  }
+
+  .card h3 {
+    font-size: 1.12rem;
+  }
+
+  .card p {
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+
+  .architecture-copy li {
+    font-size: 0.92rem;
+    line-height: 1.65;
   }
 
   .flow-row {
     grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .flow-box {
+    min-height: 68px;
+    padding: 8px 5px;
+    border-radius: 11px;
+    font-size: 0.58rem;
+    line-height: 1.35;
   }
 
   .footer-row,
   .footer-links {
     flex-direction: column;
   }
+
+  .workflow-map {
+    width: 100%;
+    height: 100%;
+  }
 }
+
+/* ─── Reduced Motion ────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -572,5 +828,47 @@ a {
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+  }
+
+  .workflow-pulses {
+    display: none;
+  }
+}
+
+.hero-architecture-visual {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-architecture-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 720px;
+}
+
+@media (min-width: 1050px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(500px, 1.05fr);
+    gap: 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-architecture-visual {
+    margin-top: 8px;
+	transform: none;
+  }
+
+  .hero-architecture-image {
+    width: 100%;
+  }
+}
+
+@media (min-width: 901px) {
+  .hero-architecture-visual {
+    transform: translateY(-70px);
   }
 }
