@@ -1,9 +1,6 @@
-<svg width="100%" viewBox="0 0 510 570" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+<svg viewBox="38 73 424 374" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg">
   <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">SynapticSOC logo symbol</title>
   <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">SynapticSOC six-node hexagonal symbol with full interior connections matching original density</desc>
-
-  <rect width="500" height="560" fill="#070A12" style="fill:rgb(7, 10, 18);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-
   <defs>
     <linearGradient id="g" x1="250" y1="80" x2="250" y2="440" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#072E73"/>
