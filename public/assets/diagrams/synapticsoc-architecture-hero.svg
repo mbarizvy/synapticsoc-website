@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 720 440" width="720" height="440" role="img" aria-labelledby="title desc">
   <title id="title">SynapticSOC architecture hero diagram</title>
-  <desc id="desc">Compact animated open-source SOC architecture showing telemetry sources converging on Graylog, bidirectional Graylog and n8n SOAR interaction, storage, reporting, analyst review, and evidence recording. Solid cyan lines show telemetry and event flow; the dashed cyan line shows passive mirrored traffic.</desc>
+  <desc id="desc">Compact animated open-source SOC architecture showing telemetry sources converging on Graylog, bidirectional Graylog and n8n SOAR interaction, indexed OpenSearch data feeding n8n SOAR, storage, reporting, analyst review, and evidence recording. Solid cyan lines show telemetry and event flow; the dashed cyan line shows passive mirrored traffic.</desc>
 
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#040811"/>
-      <stop offset="1" stop-color="#070b14"/>
+      <stop offset="1" stop-color="#070A12"/>
     </linearGradient>
 
     <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
-      <circle cx="11" cy="11" r="0.9" fill="#7182a0" opacity="0.10"/>
-      <path d="M11 7v8M7 11h8" stroke="#7182a0" stroke-width="0.55" opacity="0.04"/>
+      <circle cx="11" cy="11" r="0.9" fill="#072E73" opacity="0.18"/>
+      <path d="M11 7v8M7 11h8" stroke="#072E73" stroke-width="0.55" opacity="0.08"/>
     </pattern>
 
     <filter id="cyanGlow" x="-250%" y="-250%" width="600%" height="600%">
@@ -27,35 +27,35 @@
     </filter>
 
     <marker id="arrowCyan" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth">
-      <path d="M0 0L7 3.5L0 7Z" fill="#40e6ee"/>
+      <path d="M0 0L7 3.5L0 7Z" fill="#23D9D9"/>
     </marker>
     <marker id="arrowCyanStart" markerWidth="7" markerHeight="7" refX="1" refY="3.5" orient="auto-start-reverse" markerUnits="strokeWidth">
-      <path d="M7 0L0 3.5L7 7Z" fill="#40e6ee"/>
+      <path d="M7 0L0 3.5L7 7Z" fill="#23D9D9"/>
     </marker>
     <marker id="arrowHub" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth">
       <path d="M0 0L7 3.5L0 7Z" fill="#23D9D9"/>
     </marker>
     <marker id="arrowPurple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth">
-      <path d="M0 0L7 3.5L0 7Z" fill="#a45cff"/>
+      <path d="M0 0L7 3.5L0 7Z" fill="#7E10C2"/>
     </marker>
     <marker id="arrowPurpleStart" markerWidth="7" markerHeight="7" refX="1" refY="3.5" orient="auto-start-reverse" markerUnits="strokeWidth">
-      <path d="M7 0L0 3.5L7 7Z" fill="#a45cff"/>
+      <path d="M7 0L0 3.5L7 7Z" fill="#7E10C2"/>
     </marker>
 
     <style><![CDATA[
       :root { color-scheme: dark; }
-      .node { fill:#101722; stroke:#40e6ee; stroke-width:1.55; }
+      .node { fill:#0D1220; stroke:#23D9D9; stroke-width:1.55; }
       .hubNode { fill:#0D2025; stroke:#23D9D9; stroke-width:2.25; }
-      .n8nNode { fill:#171128; stroke:#a45cff; stroke-width:2; }
-      .text { font-family:Inter,"Segoe UI",Arial,sans-serif; fill:#49e7ef; font-size:13px; font-weight:600; text-anchor:middle; dominant-baseline:middle; }
-      .textSmall { font-family:Inter,"Segoe UI",Arial,sans-serif; fill:#49e7ef; font-size:10.2px; font-weight:550; text-anchor:middle; dominant-baseline:middle; }
-      .textTiny { font-family:Inter,"Segoe UI",Arial,sans-serif; fill:#49e7ef; font-size:7.9px; font-weight:500; text-anchor:middle; dominant-baseline:middle; letter-spacing:.1px; }
+      .n8nNode { fill:#130A22; stroke:#7E10C2; stroke-width:2; }
+      .text { font-family:Inter,"Segoe UI",Arial,sans-serif; fill:#23D9D9; font-size:13px; font-weight:650; text-anchor:middle; dominant-baseline:middle; }
+      .textSmall { font-family:Inter,"Segoe UI",Arial,sans-serif; fill:#23D9D9; font-size:10.6px; font-weight:600; text-anchor:middle; dominant-baseline:middle; }
+      .textTiny { font-family:Inter,"Segoe UI",Arial,sans-serif; fill:#8CEAEC; font-size:9.6px; font-weight:600; text-anchor:middle; dominant-baseline:middle; letter-spacing:.1px; }
       .hubText { font-family:Inter,"Segoe UI",Arial,sans-serif; fill:#23D9D9; font-size:15px; font-weight:750; text-anchor:middle; dominant-baseline:middle; }
-      .n8nText { font-family:Inter,"Segoe UI",Arial,sans-serif; fill:#c58aff; font-size:14px; font-weight:700; text-anchor:middle; dominant-baseline:middle; }
-      .flowCyan { fill:none; stroke:#40e6ee; stroke-width:1.65; stroke-linecap:round; stroke-linejoin:round; opacity:.84; }
+      .n8nText { font-family:Inter,"Segoe UI",Arial,sans-serif; fill:#C8A9FF; font-size:14px; font-weight:700; text-anchor:middle; dominant-baseline:middle; }
+      .flowCyan { fill:none; stroke:#23D9D9; stroke-width:1.65; stroke-linecap:round; stroke-linejoin:round; opacity:.84; }
       .flowHub { fill:none; stroke:#23D9D9; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:5.5 5; opacity:.9; }
-      .flowPurple { fill:none; stroke:#a45cff; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.9; }
-      .mirror { fill:none; stroke:#40e6ee; stroke-width:1.65; stroke-linecap:round; stroke-dasharray:5 4.5; opacity:.88; }
+      .flowPurple { fill:none; stroke:#7E10C2; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.9; }
+      .mirror { fill:none; stroke:#23D9D9; stroke-width:1.65; stroke-linecap:round; stroke-dasharray:5 4.5; opacity:.88; }
       .pulseCyan { fill:#7af8ff; filter:url(#cyanGlow); }
       .pulseHub { fill:#7AF8FF; filter:url(#hubGlow); }
       .pulsePurple { fill:#bf80ff; filter:url(#purpleGlow); }
@@ -71,6 +71,7 @@
     <path id="p-zeek-graylog" d="M320 355H380V220"/>
     <path id="p-graylog-opensearch" d="M495 195H555"/>
     <path id="p-opensearch-grafana" d="M625 170V125"/>
+    <path id="p-opensearch-n8n" d="M625 220V265"/>
     <path id="p-graylog-n8n" d="M495 210H520V290H555"/>
     <path id="p-n8n-analyst" d="M585 315V340H475V365"/>
     <path id="p-n8n-evidence" d="M655 315V365"/>
@@ -91,6 +92,7 @@
     <use xlink:href="#p-zeek-graylog" class="flowCyan" marker-end="url(#arrowCyan)"/>
     <use xlink:href="#p-graylog-opensearch" class="flowCyan" marker-start="url(#arrowCyanStart)" marker-end="url(#arrowCyan)"/>
     <use xlink:href="#p-opensearch-grafana" class="flowCyan" marker-end="url(#arrowCyan)"/>
+    <use xlink:href="#p-opensearch-n8n" class="flowPurple" marker-end="url(#arrowPurple)"/>
     <use xlink:href="#p-graylog-n8n" class="flowPurple" marker-start="url(#arrowPurpleStart)" marker-end="url(#arrowPurple)"/>
     <use xlink:href="#p-n8n-analyst" class="flowPurple" marker-start="url(#arrowPurpleStart)" marker-end="url(#arrowPurple)"/>
     <use xlink:href="#p-n8n-evidence" class="flowPurple" marker-end="url(#arrowPurple)"/>
@@ -112,6 +114,7 @@
     <circle r="2.7" class="pulseCyan"><animateMotion dur="1.4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath xlink:href="#p-graylog-opensearch"/></animateMotion></circle>
 
     <circle r="2.7" class="pulseCyan"><animateMotion dur="1.55s" repeatCount="indefinite"><mpath xlink:href="#p-opensearch-grafana"/></animateMotion></circle>
+    <circle r="2.9" class="pulsePurple"><animateMotion dur="1.55s" repeatCount="indefinite"><mpath xlink:href="#p-opensearch-n8n"/></animateMotion></circle>
     <circle r="2.9" class="pulsePurple"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath xlink:href="#p-graylog-n8n"/></animateMotion></circle>
     <circle r="2.9" class="pulsePurple"><animateMotion dur="1.8s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath xlink:href="#p-graylog-n8n"/></animateMotion></circle>
 
@@ -135,11 +138,11 @@
     <rect class="node" x="555" y="170" width="140" height="50" rx="14"/><text class="text" x="625" y="195">OpenSearch</text>
     <rect class="n8nNode" x="555" y="265" width="140" height="50" rx="14" filter="url(#purpleGlow)"/><text class="n8nText" x="625" y="291">n8n SOAR</text>
 
-    <rect class="node" x="25" y="330" width="140" height="50" rx="14"/><text class="textSmall" x="95" y="355">LAN SPAN / TAP</text>
+    <rect class="node" x="25" y="330" width="140" height="50" rx="14"/><text class="text" x="95" y="355">LAN SPAN / TAP</text>
     <rect class="node" x="180" y="330" width="140" height="50" rx="14"/>
-    <text class="text" x="250" y="348">Zeek</text><text class="textTiny" x="250" y="367">passive mirrored traffic</text>
+    <text class="text" x="250" y="348">Zeek</text><text class="textTiny" x="250" y="367">Passive Mirrored Traffic</text>
 
-    <rect class="node" x="405" y="365" width="140" height="50" rx="14"/><text class="textSmall" x="475" y="390">Analyst review</text>
-    <rect class="node" x="555" y="365" width="140" height="50" rx="14"/><text class="textSmall" x="625" y="390">Evidence record</text>
+    <rect class="node" x="405" y="365" width="140" height="50" rx="14"/><text class="text" x="475" y="390">Analyst Review</text>
+    <rect class="node" x="555" y="365" width="140" height="50" rx="14"/><text class="text" x="625" y="390">Evidence Record</text>
   </g>
 </svg>
