@@ -1,0 +1,425 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Architecture — SynapticSOC"
+  description="Explore the public high-level architecture of SynapticSOC, including network telemetry, endpoint visibility, Graylog aggregation, OpenSearch, n8n SOAR-assisted triage, and analyst review."
+>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="/" aria-label="SynapticSOC home">
+        <img src="/assets/logos/synapticsoc-symbol.svg" alt="" />
+        <span>Synaptic<span class="brand-soc">SOC</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/#project">The Project</a>
+        <a href="/architecture" aria-current="page">Architecture</a>
+        <a href="/#journal">Build Journal</a>
+        <a href="/#about">About</a>
+      </nav>
+
+      <a
+        class="nav-github"
+        href="https://github.com/mbarizvy/synapticsoc-website"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <main class="architecture-page">
+    <section class="architecture-page-hero">
+      <div class="container architecture-page-hero-grid">
+        <div class="architecture-page-hero-copy">
+          <p class="eyebrow">Public SOC architecture</p>
+          <h1>From raw telemetry to <span>analyst decisions</span></h1>
+          <p>
+            SynapticSOC connects perimeter, endpoint, and passive network
+            visibility into a single operational workflow designed around
+            evidence quality, structured triage, and human-reviewed decisions.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#data-flow">Explore the Data Flow</a>
+            <a class="button button-secondary" href="#status">Implementation Status</a>
+          </div>
+        </div>
+
+        <aside class="architecture-summary-card">
+          <p class="architecture-summary-label">Architecture summary</p>
+
+          <div class="architecture-summary-row">
+            <span>01</span>
+            <div><strong>Collect</strong><p>Network, endpoint, and passive LAN telemetry</p></div>
+          </div>
+
+          <div class="architecture-summary-row">
+            <span>02</span>
+            <div><strong>Aggregate</strong><p>Parse, enrich, route, search, and retain context</p></div>
+          </div>
+
+          <div class="architecture-summary-row">
+            <span>03</span>
+            <div><strong>Triage</strong><p>Correlate evidence and support analyst acknowledgment</p></div>
+          </div>
+
+          <div class="architecture-summary-row">
+            <span>04</span>
+            <div><strong>Decide</strong><p>Maintain human review and a structured evidence record</p></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="architecture-page-section">
+      <div class="container">
+        <div class="architecture-page-heading">
+          <p class="section-kicker">Architecture objective</p>
+          <h2>Connected visibility instead of isolated dashboards</h2>
+          <p>
+            The architecture is designed to improve the quality of security
+            decisions by combining multiple observations before recommending
+            action. Each component has a defined operational role.
+          </p>
+        </div>
+
+        <div class="architecture-overview-grid">
+          <article class="architecture-info-card">
+            <span class="architecture-card-number">01</span>
+            <h3>Visibility first</h3>
+            <p>Perimeter events, endpoint telemetry, and LAN-side observations provide different views of the same activity.</p>
+          </article>
+
+          <article class="architecture-info-card">
+            <span class="architecture-card-number">02</span>
+            <h3>Correlation before action</h3>
+            <p>Graylog, OpenSearch, and n8n combine context before an analyst decision or response recommendation is recorded.</p>
+          </article>
+
+          <article class="architecture-info-card">
+            <span class="architecture-card-number">03</span>
+            <h3>Human-reviewed response</h3>
+            <p>Automation supports triage and evidence handling without replacing analyst judgment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-flow" class="architecture-page-section architecture-diagram-section">
+      <div class="container">
+        <div class="architecture-page-heading">
+          <p class="section-kicker">Public high-level data flow</p>
+          <h2>How SynapticSOC processes security telemetry</h2>
+          <p>
+            This public diagram describes the main architectural relationships
+            while intentionally excluding sensitive implementation details.
+          </p>
+        </div>
+
+        <figure class="architecture-diagram-card">
+          <img
+            src="/assets/diagrams/synapticsoc-architecture-detailed-branded.svg"
+            alt="Detailed branded SynapticSOC public architecture showing perimeter, endpoint, and passive LAN telemetry converging into Graylog, with Wazuh, OpenSearch, n8n, and Grafana identified using their official logos."
+          />
+          <figcaption>
+            Solid connections represent telemetry, event, query, or workflow
+            relationships. The Zeek path represents passive mirrored LAN visibility.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="architecture-page-section">
+      <div class="container">
+        <div class="architecture-page-heading">
+          <p class="section-kicker">System layers</p>
+          <h2>Each component has a defined operational role</h2>
+          <p>The system is structured as connected layers rather than a single monolithic security platform.</p>
+        </div>
+
+        <div class="architecture-layer-grid">
+          <article class="architecture-layer-card">
+            <span class="architecture-card-number">01 / Perimeter</span>
+            <h3>Firewall and IDS telemetry</h3>
+            <p class="architecture-layer-tools">pfSense · Snort · Suricata</p>
+            <p>Perimeter traffic, firewall decisions, and IDS alerts provide the first layer of network-security visibility.</p>
+          </article>
+
+          <article class="architecture-layer-card">
+            <span class="architecture-card-number">02 / Endpoint</span>
+            <h3>Host-level visibility</h3>
+            <p class="architecture-layer-tools">Wazuh agents</p>
+            <p>Endpoint telemetry provides host events, security detections, inventory context, and supporting evidence.</p>
+          </article>
+
+          <article class="architecture-layer-card">
+            <span class="architecture-card-number">03 / Passive visibility</span>
+            <h3>LAN-side network observation</h3>
+            <p class="architecture-layer-tools">Switch SPAN / TAP · Zeek</p>
+            <p>Zeek passively observes mirrored LAN traffic to help determine whether network activity reached an internal endpoint.</p>
+          </article>
+
+          <article class="architecture-layer-card">
+            <span class="architecture-card-number">04 / Aggregation</span>
+            <h3>Parsing, enrichment, and routing</h3>
+            <p class="architecture-layer-tools">Graylog</p>
+            <p>Graylog acts as the central operational hub for normalizing, enriching, routing, searching, and presenting security context.</p>
+          </article>
+
+          <article class="architecture-layer-card">
+            <span class="architecture-card-number">05 / Storage</span>
+            <h3>Search and retention</h3>
+            <p class="architecture-layer-tools">OpenSearch</p>
+            <p>OpenSearch supports indexed search, retained telemetry, and historical investigation across the wider SOC workflow.</p>
+          </article>
+
+          <article class="architecture-layer-card">
+            <span class="architecture-card-number">06 / SOAR-assisted triage</span>
+            <h3>Enrichment and analyst workflow</h3>
+            <p class="architecture-layer-tools">n8n · Graylog · OpenSearch</p>
+            <p>n8n exchanges context with Graylog and OpenSearch to support enrichment, triage, alerting, acknowledgment, and evidence recording.</p>
+          </article>
+
+          <article class="architecture-layer-card">
+            <span class="architecture-card-number">07 / Analyst decision</span>
+            <h3>Human-reviewed action</h3>
+            <p class="architecture-layer-tools">Analyst review · Evidence record</p>
+            <p>The analyst remains responsible for interpreting evidence, confirming the event, and deciding whether response is justified.</p>
+          </article>
+
+          <article class="architecture-layer-card">
+            <span class="architecture-card-number">08 / Reporting</span>
+            <h3>Operational dashboards</h3>
+            <p class="architecture-layer-tools">Grafana</p>
+            <p>Grafana presents selected operational and reporting views from stored and processed data.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="architecture-page-section">
+      <div class="container">
+        <div class="architecture-page-heading">
+          <p class="section-kicker">Operational flow</p>
+          <h2>From observation to a documented decision</h2>
+        </div>
+
+        <ol class="architecture-step-list">
+          <li><span>01</span><div><h3>Telemetry is collected</h3><p>pfSense, IDS sensors, Wazuh agents, and Zeek provide distinct network and endpoint observations.</p></div></li>
+          <li><span>02</span><div><h3>Events are normalized and enriched</h3><p>Graylog structures and enriches incoming events so evidence from different sources can be compared consistently.</p></div></li>
+          <li><span>03</span><div><h3>Context is searched and retained</h3><p>OpenSearch supports indexed search and retained context for investigation, workflow queries, and reporting.</p></div></li>
+          <li><span>04</span><div><h3>SOAR-assisted triage is performed</h3><p>n8n coordinates high-level enrichment, correlation, alerting, acknowledgment, and evidence-recording steps.</p></div></li>
+          <li><span>05</span><div><h3>The analyst reviews the evidence</h3><p>Automation supports the decision, but the analyst determines whether observed activity requires a response.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="architecture-page-section architecture-principles-section">
+      <div class="container">
+        <div class="architecture-page-heading">
+          <p class="section-kicker">Design principles</p>
+          <h2>Built for credible and explainable operations</h2>
+        </div>
+
+        <div class="architecture-principles-grid">
+          <article><strong>Open-source first</strong><p>The project prioritizes openly available tools and transparent technical decisions.</p></article>
+          <article><strong>Evidence before automation</strong><p>Automated actions are not enabled simply because a detection fired. Evidence quality and validation come first.</p></article>
+          <article><strong>Human-reviewed decisions</strong><p>The workflow assists the analyst rather than hiding decisions inside opaque automation.</p></article>
+          <article><strong>Resource-conscious engineering</strong><p>The architecture reflects real storage, hardware, maintenance, and financial constraints.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="status" class="architecture-page-section">
+      <div class="container">
+        <div class="architecture-page-heading">
+          <p class="section-kicker">Implementation status</p>
+          <h2>Implemented capabilities and planned improvements</h2>
+          <p>SynapticSOC documents what is working today separately from what is still being designed, hardened, or validated.</p>
+        </div>
+
+        <div class="architecture-status-grid">
+          <article class="architecture-status-card implemented-status">
+            <p class="architecture-status-label">Implemented and demonstrated</p>
+            <ul>
+              <li>pfSense firewall telemetry</li>
+              <li>Snort and Suricata IDS telemetry</li>
+              <li>Wazuh endpoint telemetry</li>
+              <li>Zeek LAN-side passive visibility</li>
+              <li>Graylog parsing, enrichment, streams, and routing</li>
+              <li>OpenSearch search and storage</li>
+              <li>n8n SOAR-assisted triage and acknowledgment</li>
+              <li>Analyst review and evidence-recording workflow</li>
+              <li>Grafana operational dashboards</li>
+            </ul>
+          </article>
+
+          <article class="architecture-status-card planned-status">
+            <p class="architecture-status-label">Planned or being hardened</p>
+            <ul>
+              <li>Formal retention-policy implementation</li>
+              <li>Role-based access control review</li>
+              <li>Wazuh active-response hardening and validation</li>
+              <li>Expanded response procedures</li>
+              <li>Additional compliance-oriented documentation</li>
+              <li>Dedicated case-management integration</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="architecture-page-section disclosure-section">
+      <div class="container disclosure-card">
+        <div>
+          <p class="section-kicker">Public disclosure boundary</p>
+          <h2>Designed to explain the system without exposing it</h2>
+        </div>
+        <p>
+          The public architecture intentionally excludes credentials, tokens,
+          internal addresses, ports, hostnames, firewall rules, Graylog queries,
+          n8n workflow logic, and other implementation details that could increase operational risk.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© 2026 SynapticSOC</span>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/architecture">Architecture</a>
+        <a href="https://github.com/mbarizvy" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .architecture-page { overflow: hidden; }
+    .architecture-page-hero {
+      padding: 104px 0 84px;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(35, 217, 217, 0.08), transparent 30%),
+        radial-gradient(circle at 82% 24%, rgba(126, 16, 194, 0.1), transparent 32%);
+    }
+    .architecture-page-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+      gap: 72px;
+      align-items: center;
+    }
+    .architecture-page-hero-copy h1 {
+      max-width: 760px; margin: 0; font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(3.2rem, 7vw, 6rem); line-height: 0.98; letter-spacing: -0.075em;
+    }
+    .architecture-page-hero-copy h1 span {
+      display: block;
+      background: linear-gradient(135deg, var(--cyan), #7e8cff 52%, var(--violet));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .architecture-page-hero-copy > p:not(.eyebrow) {
+      max-width: 700px; margin: 28px 0 0; color: var(--text-secondary); font-size: 1.08rem;
+    }
+    .architecture-summary-card, .architecture-info-card, .architecture-layer-card,
+    .architecture-status-card, .architecture-diagram-card, .disclosure-card {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(18, 26, 43, 0.96), rgba(13, 18, 32, 0.96));
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.18);
+    }
+    .architecture-summary-card { padding: 28px; border-radius: 24px; }
+    .architecture-summary-label, .architecture-status-label {
+      margin: 0 0 20px; color: var(--cyan); font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .architecture-summary-row {
+      display: grid; grid-template-columns: 38px 1fr; gap: 14px;
+      padding: 16px 0; border-bottom: 1px solid var(--border);
+    }
+    .architecture-summary-row:last-child { border-bottom: 0; }
+    .architecture-summary-row > span, .architecture-card-number {
+      color: var(--cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    }
+    .architecture-summary-row strong { font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; }
+    .architecture-summary-row p { margin: 4px 0 0; color: var(--text-secondary); font-size: 0.9rem; }
+
+    .architecture-page-section { padding: 96px 0; border-top: 1px solid rgba(27, 39, 64, 0.7); }
+    .architecture-page-heading { max-width: 820px; margin-bottom: 42px; }
+    .architecture-page-heading h2, .disclosure-card h2 {
+      margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.04; letter-spacing: -0.06em;
+    }
+    .architecture-page-heading > p:last-child { margin: 20px 0 0; color: var(--text-secondary); font-size: 1.02rem; }
+
+    .architecture-overview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .architecture-info-card, .architecture-layer-card { padding: 28px; border-radius: var(--radius); }
+    .architecture-info-card h3, .architecture-layer-card h3, .architecture-step-list h3 {
+      margin: 18px 0 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; letter-spacing: -0.035em;
+    }
+    .architecture-info-card p, .architecture-layer-card p, .architecture-step-list p,
+    .architecture-principles-grid p { margin: 12px 0 0; color: var(--text-secondary); }
+
+    .architecture-diagram-card { margin: 0; padding: 20px; border-radius: 26px; }
+    .architecture-diagram-card img { width: 100%; height: auto; border-radius: 18px; }
+    .architecture-diagram-card figcaption { padding: 16px 4px 2px; color: var(--text-muted); font-size: 0.88rem; }
+
+    .architecture-layer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .architecture-layer-tools {
+      color: var(--cyan) !important; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem; letter-spacing: 0.02em;
+    }
+
+    .architecture-step-list { max-width: 880px; margin: 0; padding: 0; list-style: none; }
+    .architecture-step-list li {
+      display: grid; grid-template-columns: 58px 1fr; gap: 22px;
+      padding: 24px 0; border-bottom: 1px solid var(--border);
+    }
+    .architecture-step-list li > span {
+      color: var(--cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; padding-top: 5px;
+    }
+    .architecture-step-list h3 { margin-top: 0; }
+
+    .architecture-principles-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .architecture-principles-grid article {
+      padding: 24px; border-top: 2px solid rgba(35, 217, 217, 0.45);
+      background: rgba(13, 18, 32, 0.55);
+    }
+    .architecture-principles-grid strong { font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; }
+
+    .architecture-status-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .architecture-status-card { padding: 28px; border-radius: var(--radius); }
+    .implemented-status { border-color: rgba(35, 217, 217, 0.3); }
+    .planned-status { border-color: rgba(126, 16, 194, 0.32); }
+    .planned-status .architecture-status-label { color: #a66ae0; }
+    .architecture-status-card ul { margin: 0; padding-left: 20px; color: var(--text-secondary); }
+    .architecture-status-card li { padding: 7px 0; }
+
+    .disclosure-card {
+      display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 48px; align-items: center; padding: 38px; border-radius: 24px;
+    }
+    .disclosure-card p:last-child { margin: 0; color: var(--text-secondary); font-size: 1rem; }
+
+    @media (max-width: 980px) {
+      .architecture-page-hero-grid, .disclosure-card { grid-template-columns: 1fr; }
+      .architecture-overview-grid, .architecture-principles-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .architecture-page-hero { padding: 68px 0 58px; }
+      .architecture-page-hero-grid { gap: 34px; }
+      .architecture-page-hero-copy h1 { font-size: clamp(2.6rem, 14vw, 4rem); }
+      .architecture-page-section { padding: 68px 0; }
+      .architecture-overview-grid, .architecture-layer-grid,
+      .architecture-principles-grid, .architecture-status-grid { grid-template-columns: 1fr; }
+      .architecture-summary-card, .architecture-info-card, .architecture-layer-card,
+      .architecture-status-card, .architecture-diagram-card, .disclosure-card { padding: 22px; }
+      .architecture-page-heading { margin-bottom: 30px; }
+      .architecture-page-heading h2, .disclosure-card h2 { font-size: clamp(2rem, 11vw, 3rem); }
+      .architecture-step-list li { grid-template-columns: 38px 1fr; gap: 14px; }
+    }
+  </style>
+</Layout>
