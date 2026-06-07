@@ -1,0 +1,219 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'journal'>;
+}
+
+export async function getStaticPaths() {
+  const entries = await getCollection('journal', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  });
+
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+---
+
+<Layout
+  title={`${entry.data.title} — SynapticSOC Build Journal`}
+  description={entry.data.description}
+>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="/" aria-label="SynapticSOC home">
+        <img src="/assets/logos/synapticsoc-symbol.svg" alt="" />
+        <span>Synaptic<span class="brand-soc">SOC</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/#project">The Project</a>
+        <a href="/architecture">Architecture</a>
+        <a href="/journal" aria-current="page">Build Journal</a>
+        <a href="/#about">About</a>
+      </nav>
+
+      <a
+        class="nav-github"
+        href="https://github.com/mbarizvy/synapticsoc-website"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <main class="journal-entry-page">
+    <article class="journal-entry">
+      <div class="container journal-entry-container">
+        <a class="back-link" href="/journal">← Back to Build Journal</a>
+
+        <header class="journal-entry-header">
+          <p class="eyebrow">{entry.data.category}</p>
+
+          <h1>{entry.data.title}</h1>
+
+          <p>{entry.data.description}</p>
+
+          <div class="journal-entry-meta">
+            <time datetime={entry.data.date.toISOString()}>
+              {formatDate(entry.data.date)}
+            </time>
+            <span>{entry.data.stage}</span>
+          </div>
+        </header>
+
+        <div class="journal-entry-content">
+          <Content />
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© 2026 SynapticSOC</span>
+
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/architecture">Architecture</a>
+        <a href="/journal">Build Journal</a>
+        <a href="https://github.com/mbarizvy" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .journal-entry-page {
+      overflow: hidden;
+    }
+
+    .journal-entry {
+      padding: 92px 0;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(35, 217, 217, 0.08), transparent 30%),
+        radial-gradient(circle at 78% 18%, rgba(126, 16, 194, 0.09), transparent 32%);
+    }
+
+    .journal-entry-container {
+      max-width: 900px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      margin-bottom: 42px;
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .journal-entry-header h1 {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.075em;
+    }
+
+    .journal-entry-header > p:not(.eyebrow) {
+      max-width: 780px;
+      margin: 26px 0 0;
+      color: var(--text-secondary);
+      font-size: 1.08rem;
+    }
+
+    .journal-entry-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .journal-entry-meta span,
+    .journal-entry-meta time {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(35, 217, 217, 0.18);
+      background: rgba(13, 18, 32, 0.7);
+    }
+
+    .journal-entry-content {
+      margin-top: 54px;
+      padding: 38px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(18, 26, 43, 0.96), rgba(13, 18, 32, 0.96));
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .journal-entry-content :global(h2) {
+      margin: 42px 0 14px;
+      color: var(--text-primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+    }
+
+    .journal-entry-content :global(h2:first-child) {
+      margin-top: 0;
+    }
+
+    .journal-entry-content :global(p) {
+      margin: 0 0 20px;
+    }
+
+    .journal-entry-content :global(a) {
+      color: var(--cyan);
+    }
+
+    .journal-entry-content :global(ul) {
+      padding-left: 22px;
+    }
+
+    .journal-entry-content :global(li) {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .journal-entry {
+        padding: 68px 0;
+      }
+
+      .journal-entry-header h1 {
+        font-size: clamp(2.5rem, 13vw, 3.8rem);
+      }
+
+      .journal-entry-content {
+        margin-top: 40px;
+        padding: 24px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</Layout>
+'@ | Set-Content -Path .\src\pages\journal\[id].astro -Encoding UTF8
