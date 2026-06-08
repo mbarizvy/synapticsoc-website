@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="/" aria-label="SynapticSOC home">
+        <img src="/assets/logos/synapticsoc-symbol.svg" alt="" />
+        <span>Synaptic<span class="brand-soc">SOC</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/#project">The Project</a>
+        <a href="/architecture">Architecture</a>
+        <a href="/journal">Build Journal</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+
+      <a class="nav-github" href="https://github.com/mbarizvy" target="_blank" rel="noreferrer">
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">About SynapticSOC</p>
+        <h1>A practical open-source SOC engineering project</h1>
+        <p class="hero-copy">
+          SynapticSOC is an independent cybersecurity engineering project focused on designing,
+          integrating, validating, and documenting a practical open-source Security Operations Center.
+        </p>
+      </div>
+    </section>
+	
+	</section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">Why It Exists</p>
+          <h2 class="section-title">Practical SOC engineering, documented openly</h2>
+          <p class="section-description">
+            SynapticSOC was created to explore how open-source security technologies can be integrated
+            into a practical and operationally meaningful Security Operations Center. The project documents
+            successful implementations as well as the challenges, limitations, trade-offs, and design
+            decisions encountered throughout the process.
+          </p>
+          <p class="section-description">
+            By publishing the build journey, SynapticSOC aims to contribute to a clearer understanding of
+            SOC engineering, detection workflow, evidence handling, analyst accountability, and
+            compliance-driven security operations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">Project Focus</p>
+          <h2 class="section-title">From telemetry to defensible security decisions</h2>
+          <p class="section-description">
+            The project examines how network telemetry, endpoint visibility, detection engineering,
+            correlation, triage, evidence handling, and compliance-oriented operational controls can
+            be combined into a cohesive security operations workflow using open-source technologies.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="card project-card">
+            <div class="card-number">01 / Evidence</div>
+            <h3>Evidence over assumptions</h3>
+            <p>
+              Alerts are treated as indicators requiring validation. Decisions are supported through
+              correlation across multiple telemetry sources rather than relying on a single detection engine.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">02 / Documentation</div>
+            <h3>Documentation over memory</h3>
+            <p>
+              Architecture decisions, implementation challenges, operational findings, workflow improvements,
+              and control implementations are documented through build journals and technical records.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">03 / Compliance</div>
+            <h3>Compliance-driven design</h3>
+            <p>
+              Retention, auditability, analyst accountability, evidence preservation, and access control
+              considerations guide architectural and operational decisions.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="project-grid">
+          <article class="card project-card">
+            <div class="card-number">04 / Focus</div>
+            <h3>Current focus</h3>
+            <p>
+              Firewall telemetry, IDS visibility, endpoint monitoring, event normalization,
+              enrichment, correlation, triage workflow, analyst acknowledgment, and evidence retention.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">05 / Stack</div>
+            <h3>Technology stack</h3>
+            <p>
+              pfSense, Wazuh, Graylog, OpenSearch, Zeek, Snort, Suricata, Grafana, n8n,
+              and supporting open-source components.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">06 / Scope</div>
+            <h3>Project scope</h3>
+            <p>
+              SynapticSOC is an engineering and research project. It is not a commercial
+              SIEM platform, managed SOC service, or security product.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">Maintainer</p>
+          <h2 class="section-title">
+            Created and maintained by <span class="highlight-text">Md Bashir Ahmed</span>
+          </h2>
+          <p class="section-description">
+            The project is maintained as part of an independent cybersecurity engineering effort
+            focused on practical open-source SOC architecture, detection workflow, evidence handling,
+            and compliance-driven security operations.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© 2026 SynapticSOC</span>
+      <div class="footer-links">
+        <a href="https://github.com/mbarizvy" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="/architecture">Architecture</a>
+        <a href="/journal">Build Journal</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <style>
+  .highlight-text {
+    color: #22d3ee;
+  }
+  </style>
+</Layout>

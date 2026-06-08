@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="/" aria-label="SynapticSOC home">
+        <img src="/assets/logos/synapticsoc-symbol.svg" alt="" />
+        <span>Synaptic<span class="brand-soc">SOC</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/#project">The Project</a>
+        <a href="/architecture">Architecture</a>
+        <a href="/journal">Build Journal</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+
+      <a
+        class="nav-github"
+        href="https://github.com/mbarizvy"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+
+        <h1>Connect with SynapticSOC</h1>
+
+        <p class="hero-copy">
+          SynapticSOC is open to cybersecurity discussion, project feedback,
+          collaboration, research conversation, and professional inquiries
+          related to open-source SOC design and security operations.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="mailto:contact@synapticsoc.com">
+            contact@synapticsoc.com
+          </a>
+
+          <a
+            class="button button-secondary"
+            href="https://github.com/mbarizvy"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="project-grid">
+          <article class="card project-card">
+            <div class="card-number">01 / Email</div>
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:contact@synapticsoc.com">contact@synapticsoc.com</a>
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">02 / GitHub</div>
+            <h3>GitHub</h3>
+            <p>
+              <a href="https://github.com/mbarizvy" target="_blank" rel="noreferrer">
+                github.com/mbarizvy
+              </a>
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">03 / LinkedIn</div>
+            <h3>LinkedIn</h3>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/md-bashir-ahmed-53786a301"
+                target="_blank"
+                rel="noreferrer"
+              >
+                linkedin.com/in/md-bashir-ahmed-53786a301
+              </a>
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">04 / YouTube</div>
+            <h3>YouTube</h3>
+            <p>
+              <a href="https://www.youtube.com/@synapticsoc" target="_blank" rel="noreferrer">
+                youtube.com/@synapticsoc
+              </a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© 2026 SynapticSOC</span>
+
+      <div class="footer-links">
+        <a href="https://github.com/mbarizvy" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+        <a href="/architecture">Architecture</a>
+        <a href="/journal">Build Journal</a>
+        <a href="/about">About</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
