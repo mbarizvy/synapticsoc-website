@@ -11,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#project">The Project</a>
+        <a href="/project">The Project</a>
         <a href="/architecture">Architecture</a>
         <a href="/journal">Build Journal</a>
         <a href="/about">About</a>
@@ -157,16 +157,16 @@ import Layout from '../layouts/Layout.astro';
 
             <div class="flow-row">
               <div class="flow-box">Zeek</div>
+              <div class="flow-box flow-highlight-blue">Wazuh</div>
               <div class="flow-box flow-highlight">Graylog</div>
-              <div class="flow-box">OpenSearch</div>
             </div>
 
             <div class="flow-row">
-              <div class="flow-box">Enrichment</div>
-              <div class="flow-box flow-highlight">n8n Triage</div>
+              <div class="flow-box">OpenSearch</div>
+              <div class="flow-box flow-highlight-purple">n8n Triage</div>
               <div class="flow-box">Analyst Response</div>
             </div>
-          </div>
+          </div> 
         </div>
       </div>
     </section>
@@ -291,4 +291,17 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </footer>
+  <style>
+  .flow-highlight-blue {
+    border-color: #60a5fa;
+    box-shadow: 0 0 24px rgba(96, 165, 250, 0.35);
+    color: #bfdbfe;
+  }
+
+  .flow-highlight-purple {
+    border-color: #a855f7;
+    box-shadow: 0 0 24px rgba(168, 85, 247, 0.35);
+    color: #e9d5ff;
+  }
+  </style>
 </Layout>

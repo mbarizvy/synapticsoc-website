@@ -13,6 +13,10 @@
       <stop offset="0" stop-color="#101827"/>
       <stop offset="1" stop-color="#0D1220"/>
     </linearGradient>
+    <linearGradient id="wazuhGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D1E35"/>
+      <stop offset="1" stop-color="#0D1220"/>
+    </linearGradient>
     <linearGradient id="graylogGradient" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#102A52"/>
       <stop offset="1" stop-color="#0D1220"/>
@@ -23,6 +27,10 @@
     </linearGradient>
     <filter id="glowCyan" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="3.6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowBlue" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.2" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="glowPurple" x="-50%" y="-50%" width="200%" height="200%">
@@ -57,6 +65,7 @@
     <style>
       .section { fill:#7D879A; font:700 12px 'Inter', 'Segoe UI', Arial, sans-serif; letter-spacing:2.6px; text-transform:uppercase; }
       .box { fill:url(#boxGradient); stroke:#23D9D9; stroke-width:1.7; }
+      .wazuh { fill:url(#wazuhGradient); stroke:#4FA3FF; stroke-width:2.15; }
       .hub { fill:url(#graylogGradient); stroke:#23D9D9; stroke-width:2; }
       .soar { fill:url(#soarGradient); stroke:#23D9D9; stroke-width:1.7; }
       .inner-purple { fill:none; stroke:#9A5BEA; stroke-width:1.5; opacity:.85; }
@@ -141,7 +150,7 @@
 <text class="tag" x="595.0" y="169" >Alert source</text>
     <rect class="box" x="70" y="245" width="170" height="76" rx="16" />
 <text class="label" x="155.0" y="285.0" >Endpoints</text>
-    <rect class="box" x="290" y="245" width="170" height="76" rx="16" />
+    <rect class="wazuh" x="290" y="245" width="170" height="76" rx="16" filter="url(#glowBlue)"/>
 <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMzAiIGhlaWdodD0iMjciIHZpZXdCb3g9IjAgMCAxODkyIDM4OCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+Cgk8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAxIDIwNy40NyAyMjkuMTkpIj4KCQk8cG9seWdvbiBzdHlsZT0ic3Ryb2tlOiBub25lOyBzdHJva2Utd2lkdGg6IDE7IHN0cm9rZS1kYXNoYXJyYXk6IG5vbmU7IHN0cm9rZS1saW5lY2FwOiBidXR0OyBzdHJva2UtZGFzaG9mZnNldDogMDsgc3Ryb2tlLWxpbmVqb2luOiBtaXRlcjsgc3Ryb2tlLW1pdGVybGltaXQ6IDQ7IGZpbGwtcnVsZTogbm9uemVybzsgb3BhY2l0eTogMTsiIHBvaW50cz0iLTExNS45NywxNDguOTkgLTIwNi45NywtMTQ4Ljk5IC0xNDkuODgsLTE0OC45OSAtODcuNTYsNTUuNSAtMjQuNjcsLTE0OC44NSAyNC45NiwtMTQ4Ljg1IDg3LjgzLDU1LjUgMTUwLjE2LC0xNDguODUgMjA2Ljk3LC0xNDguODUgMTE1Ljk2LDE0OC45OSA2OS42NCwxNDguOTkgMC4xNCwtNjYuNjggLTY5LjY0LDE0OC45OSAiIGZpbGw9IiNGRkZGRkYiPjwvcG9seWdvbj4KCTwvZz4KCTxnIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgOTMzLjQgMjI5LjI2KSI+Cgk8cG9seWdvbiBzdHlsZT0ic3Ryb2tlOiBub25lOyBzdHJva2Utd2lkdGg6IDE7IHN0cm9rZS1kYXNoYXJyYXk6IG5vbmU7IHN0cm9rZS1saW5lY2FwOiBidXR0OyBzdHJva2UtZGFzaG9mZnNldDogMDsgc3Ryb2tlLWxpbmVqb2luOiBtaXRlcjsgc3Ryb2tlLW1pdGVybGltaXQ6IDQ7IGZpbGwtcnVsZTogbm9uemVybzsgb3BhY2l0eTogMTsiIHBvaW50cz0iLTEzMC4zLDE0OC45MiAtMTMwLjMsMTM5LjgxIDM4Ljc0LC05Ny4zNSAtMTE0Ljg1LC05Ny4zNSAtMTE0Ljg1LC0xNDguOTIgMTMwLjMsLTE0OC45MiAxMzAuMywtMTM5LjU0IC0zOC40Niw5Ny4zNSAxMjIuMDQsOTcuMzUgMTIyLjA0LDE0OC45MiAiIGZpbGw9IiNGRkZGRkYiPjwvcG9seWdvbj4KCTwvZz4KCTxnIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgNTkwLjY1IDIyOS40OSkiPgoJCTxwYXRoIHN0eWxlPSJzdHJva2U6IG5vbmU7IHN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1kYXNob2Zmc2V0OiAwOyBzdHJva2UtbGluZWpvaW46IG1pdGVyOyBzdHJva2UtbWl0ZXJsaW1pdDogNDsgZmlsbC1ydWxlOiBub256ZXJvOyBvcGFjaXR5OiAxOyIgdHJhbnNmb3JtPSIgdHJhbnNsYXRlKC05ODkuMTMsIC01NDkuNjEpIiBkPSJNIDEwODYuNzQ0IDQzMS44NTIgYyAtMjUuNTM4IC0yNi42NDkgLTYwLjM4IC00MC42NzEgLTEwMS4zNzQgLTQwLjY3MSBjIC04Ni43NTMgMCAtMTUyLjE2NSA2OC4xMTcgLTE1Mi4xNjUgMTU4LjQ0IGMgMCA5MC4zMTMgNjUuNDExIDE1OC40MjEgMTUyLjE2NSAxNTguNDIxIGMgNDAuODk5IDAgNzUuNzQxIC0xMy45MzcgMTAxLjM3NCAtNDAuNDA1IHYgMzQuMTU4IGggNTguMzEgViAzOTcuNDQ3IGggLTU4LjMxIFYgNDMxLjg1MiB6IE0gOTkxLjMxMyA2NTMuMTY5IGMgLTU3LjI2NiAwIC05OC44NDggLTQzLjU0NyAtOTguODQ4IC0xMDMuNTQ4IGMgMCAtNTkuODEgNDEuNTgyIC0xMDMuMjI1IDk4Ljg0OCAtMTAzLjIyNSBjIDU3LjA5NSAwIDk4LjU0NCA0My40MTUgOTguNTQ0IDEwMy4yMjUgQyAxMDg5Ljg1OCA2MDkuNjIxIDEwNDguNDA4IDY1My4xNjkgOTkxLjMxMyA2NTMuMTY5IHoiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZmlsbD0iI0ZGRkZGRiI+PC9wYXRoPgoJPC9nPgoJPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAxMjU0LjQ0IDIzMi42MykiPgoJCTxwYXRoIHN0eWxlPSJzdHJva2U6IG5vbmU7IHN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1kYXNob2Zmc2V0OiAwOyBzdHJva2UtbGluZWpvaW46IG1pdGVyOyBzdHJva2UtbWl0ZXJsaW1pdDogNDsgZmlsbC1ydWxlOiBub256ZXJvOyBvcGFjaXR5OiAxOyIgdHJhbnNmb3JtPSIgdHJhbnNsYXRlKC0xNjUyLjkxLCAtNTUyLjc0KSIgZD0iTSAxNzMzLjc3NiAzOTcuNDQ3IHYgMTcxLjU3OSBjIDAgNTMuNDY4IC0yOS40MyA4NC4xNDIgLTgwLjcxNSA4NC4xNDIgYyAtNTEuNDc1IDAgLTgxIC0zMC42NzQgLTgxIC04NC4xNDIgViAzOTcuNDQ3IGggLTU4LjMyOSB2IDE3Ni4yNjkgYyAwIDk5LjE0MyA3NS4wNTcgMTM0LjMyNiAxMzkuMzI5IDEzNC4zMjYgYyA2NC4xMzkgMCAxMzkuMDI2IC0zNS4xODQgMTM5LjAyNiAtMTM0LjMyNiBWIDM5Ny40NDcgSCAxNzMzLjc3NiB6IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9IiNGRkZGRkYiPjwvcGF0aD4KCTwvZz4KCTxnIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgMTU5OS40OCAxODkuMzQpIj4KCQk8cGF0aCBzdHlsZT0ic3Ryb2tlOiBub25lOyBzdHJva2Utd2lkdGg6IDE7IHN0cm9rZS1kYXNoYXJyYXk6IG5vbmU7IHN0cm9rZS1saW5lY2FwOiBidXR0OyBzdHJva2UtZGFzaG9mZnNldDogMDsgc3Ryb2tlLWxpbmVqb2luOiBtaXRlcjsgc3Ryb2tlLW1pdGVybGltaXQ6IDQ7IGZpbGwtcnVsZTogbm9uemVybzsgb3BhY2l0eTogMTsiIHRyYW5zZm9ybT0iIHRyYW5zbGF0ZSgtMTk5Ny45NiwgLTUwOS40NikiIGQ9Ik0gMTg2NC4wNjcgNjk4LjMwMiBWIDMyMC42MjQgaCA1MS41NyB2IDE5NC44MjkgaCA2Ljg5MiB2IDE4Mi44NDggSCAxODY0LjA2NyB6IE0gMjA3My4zODQgNjk4LjMwMiB2IC0xNDYuNDUgYyAwIC0xMS41ODIgLTAuOTY4IC0yMy40NzggLTIuOTA1IC0zNS43MDYgYyAtMS45MTggLTEyLjIyOCAtNS42MDEgLTIzLjU4MiAtMTEuMDMyIC0zNC4wNjMgYyAtNS40MTEgLTEwLjQ4MSAtMTMuMDQ0IC0xOC45MyAtMjIuODggLTI1LjM2NyBzIC0yMi42NzEgLTkuNjU1IC0zOC40NjggLTkuNjU1IGMgLTEwLjMxIDAgLTIwLjA1MSAxLjY5OSAtMjkuMjQgNS4xMDggYyAtOS4xOSAzLjM5OSAtMTcuMjQxIDguODY3IC0yNC4xMzMgMTYuNDA1IGMgLTYuODkyIDcuNTM4IC0xMi4zMDQgMTcuNDY4IC0xNi4yNzIgMjkuNzgyIGMgLTMuOTQ5IDEyLjMyMyAtNS45MjQgMjcuMzA0IC01LjkyNCA0NC45NTMgbCAtMzUuODQ4IC0xMy41MSBjIDAgLTI3LjAyOSA1LjA1MSAtNTAuODg2IDE1LjE3MSAtNzEuNTYzIGMgMTAuMTAxIC0yMC42ODcgMjQuNjI3IC0zNi44MTYgNDMuNTc2IC00OC4zOTkgYyAxOC45MyAtMTEuNTgyIDQxLjgxIC0xNy4zNzMgNjguNjU4IC0xNy4zNzMgYyAyMC41ODIgMCAzNy44OCAzLjMwNCA1MS44NTQgOS45MjEgYyAxMy45NTYgNi42MjcgMjUuMzEgMTUuMzEzIDM0LjA0NCAyNi4wNiBjIDguNzM0IDEwLjc1NiAxNS4zOTkgMjIuNDgxIDE5Ljk5NCAzNS4xNjUgYyA0LjU5NSAxMi42ODQgNy43MjggMjUuMDkyIDkuMzggMzcuMjM0IGMgMS42NTIgMTIuMTMzIDIuNDg4IDIyLjc5NCAyLjQ4OCAzMS45ODQgdiAxNjUuNDc1IEggMjA3My4zODQgeiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSIjRkZGRkZGIj48L3BhdGg+Cgk8L2c+Cgk8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAxIDE4NDQuNjQgMzM3LjEpIj4KCQk8Y2lyY2xlIHN0eWxlPSJzdHJva2U6IG5vbmU7IHN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1kYXNob2Zmc2V0OiAwOyBzdHJva2UtbGluZWpvaW46IG1pdGVyOyBzdHJva2UtbWl0ZXJsaW1pdDogNDsgZmlsbC1ydWxlOiBub256ZXJvOyBvcGFjaXR5OiAxOyIgY3g9IjAiIGN5PSIwIiByPSI0Ny4wMDciIGZpbGw9IiMzNTg1RjkiPjwvY2lyY2xlPgoJPC9nPgo8L3N2Zz4=" x="334.0" y="261.0" width="82" height="17" preserveAspectRatio="xMidYMid meet"/>
 <text class="subtitle" x="375.0" y="301" >Endpoint detections</text>
     <rect class="box" x="70" y="385" width="170" height="76" rx="16" />
