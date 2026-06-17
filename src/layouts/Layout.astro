@@ -2,8 +2,8 @@
 import '../styles/global.css';
 
 const {
-  title = 'SynapticSOC — Open-Source Security Operations Center',
-  description = 'SynapticSOC is an independently built open-source SOC project using real hardware, real telemetry, and practical engineering decisions.',
+  title = 'SynapticSOC — Evidence-Driven SOC Engineering',
+  description = 'SynapticSOC is an independently built cybersecurity engineering project using real hardware, real telemetry, open-source security tools, and realistic resource constraints.',
 } = Astro.props;
 ---
 
@@ -13,6 +13,13 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+	<meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+	<meta property="og:url" content="https://synapticsoc.com/" />	
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />	
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/assets/logos/synapticsoc-symbol.svg" />
     <title>{title}</title>
