@@ -522,6 +522,24 @@ a {
   padding: 28px;
 }
 
+.phase-callout {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-left: 2px solid #00e5cc;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.72);
+  box-sizing: border-box;
+}
+
+.phase-callout h3 {
+  margin: 0.35rem 0 0.75rem;
+}
+
+.phase-callout p {
+  margin-bottom: 0;
+}
+
 .card-number {
   margin-bottom: 24px;
   color: var(--cyan);

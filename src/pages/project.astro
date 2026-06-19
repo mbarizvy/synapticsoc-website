@@ -18,7 +18,7 @@ import Layout from '../layouts/Layout.astro';
         <a href="/contact">Contact</a>
       </nav>
 
-      <a class="nav-github" href="https://github.com/mbarizvy" target="_blank" rel="noreferrer">
+      <a class="nav-github" href="https://github.com/mbarizvy/synaptic-soc-soar" target="_blank" rel="noreferrer">
         GitHub
       </a>
     </div>
@@ -30,14 +30,20 @@ import Layout from '../layouts/Layout.astro';
         <p class="eyebrow">The Project</p>
         <h1>SynapticSOC</h1>
         <p class="hero-copy">
-          An open-source SOC operating model built under real-world constraints,
-          focused on visibility, detection, correlation, controlled response,
-          evidence handling, retention, and audit-aware operations.
+          A self-hosted SOC operating model built with open-source security tools — from perimeter
+          sensor to audit record, integrating IDS alerts, firewall telemetry, passive network visibility,
+          and endpoint detection into a correlated triage pipeline with controlled automation, access
+          separation, evidence handling, retention policy, and audit-ready controls.
         </p>
 
         <div class="hero-actions">
-          <a class="button button-primary" href="/architecture">Explore Architecture</a>
-          <a class="button button-secondary" href="https://github.com/mbarizvy" target="_blank" rel="noreferrer">
+          <a class="button button-primary" href="/docs/SynapticSOC_Whitepaper_v1.2.pdf" target="_blank" rel="noopener noreferrer">
+            Read the Whitepaper
+          </a>
+          <a class="button button-secondary" href="/architecture">
+            Explore Architecture
+          </a>
+          <a class="button button-secondary" href="https://github.com/mbarizvy/synaptic-soc-soar" target="_blank" rel="noreferrer">
             View GitHub
           </a>
         </div>
@@ -48,11 +54,14 @@ import Layout from '../layouts/Layout.astro';
       <div class="container">
         <div class="section-header">
           <p class="section-kicker">What It Is</p>
-          <h2 class="section-title">A practical SOC, not a tool showcase</h2>
+          <h2 class="section-title">A practical SOC operating model, not a tool showcase</h2>
           <p class="section-description">
-            SynapticSOC is a self-hosted open-source SOC project that connects firewall telemetry,
-            IDS alerts, endpoint visibility, network evidence, log management, triage workflows,
-            analyst acknowledgment, and evidence records into one operational security model.
+            SynapticSOC is an operational Security Operations Center project built under real-world
+            infrastructure and resource constraints. It is not presented as a commercial SOC platform,
+            managed detection service, certified compliance environment, or disposable lab exercise.
+            It is a working SOC operating model designed to show how security telemetry, detection,
+            triage, automation, accountability, and governance controls can be brought together in a
+            self-hosted environment.
           </p>
         </div>
 
@@ -61,28 +70,44 @@ import Layout from '../layouts/Layout.astro';
             <div class="card-number">01 / Visibility</div>
             <h3>Observe the environment</h3>
             <p>
-              Firewall, IDS, endpoint, and LAN-side telemetry are collected to support practical
-              monitoring and investigation.
+              Firewall telemetry, IDS alerts, passive network visibility, and endpoint events are
+              collected to support practical detection, investigation, and triage.
             </p>
           </article>
 
           <article class="card project-card">
             <div class="card-number">02 / Correlation</div>
-            <h3>Validate before responding</h3>
+            <h3>Review events in context</h3>
             <p>
-              Alerts are compared against supporting evidence from pfSense, Wazuh, Zeek, Graylog,
-              and enrichment workflows.
+              Alerts are correlated against supporting evidence from firewall, network, endpoint,
+              and enrichment sources before any response decision is made.
             </p>
           </article>
 
           <article class="card project-card">
             <div class="card-number">03 / Accountability</div>
-            <h3>Record the decision</h3>
+            <h3>Record the workflow</h3>
             <p>
-              Analyst acknowledgment, evidence records, retention, and control summaries are used
-              to support traceability and audit visibility.
+              Analyst acknowledgment, audit records, retention documentation, and control summaries
+              support traceability, management review, and audit-ready visibility.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">Operating Model</p>
+          <h2 class="section-title">Built with open-source tools, defined by integration and control</h2>
+          <p class="section-description">
+            The project uses open-source security tools across perimeter security, network intrusion
+            detection, passive network analysis, endpoint monitoring, log management, indexing,
+            workflow automation, dashboarding, and analyst communication. Those tools provide the
+            foundation. The SynapticSOC operating model defines how the components are integrated,
+            correlated, controlled, documented, and governed.
+          </p>
         </div>
       </div>
     </section>
@@ -91,31 +116,79 @@ import Layout from '../layouts/Layout.astro';
       <div class="container">
         <div class="section-header">
           <p class="section-kicker">Maturity Path</p>
-          <h2 class="section-title">From monitoring to controlled operations</h2>
+          <h2 class="section-title">From visibility to audit-ready control documentation</h2>
           <p class="section-description">
-            The project has matured from basic telemetry collection into a compliance-driven SOC
-            workflow with controlled triage, retained evidence, and documented operational controls.
+            SynapticSOC was built through a deliberate maturity path: operational capability first,
+            governance and controls built on top. Each stage depended on the one before it.
           </p>
         </div>
 
         <div class="project-grid">
           <article class="card project-card">
-            <div class="card-number">Phase 01</div>
+            <div class="card-number">Stage 01</div>
             <h3>Visibility</h3>
-            <p>Firewall, IDS, endpoint, and network visibility were established.</p>
+            <p>Firewall, IDS, passive network, and endpoint telemetry were established across the environment.</p>
           </article>
 
           <article class="card project-card">
-            <div class="card-number">Phase 02</div>
-            <h3>Detection & Correlation</h3>
-            <p>Security events were normalized, enriched, and correlated across multiple sources.</p>
+            <div class="card-number">Stage 02</div>
+            <h3>Detection</h3>
+            <p>Detection sources were configured and validated. Log ingestion into the triage layer was stabilized.</p>
           </article>
 
           <article class="card project-card">
-            <div class="card-number">Phase 03</div>
-            <h3>Controlled Response</h3>
-            <p>n8n workflows, analyst acknowledgment, evidence records, and retention were introduced.</p>
+            <div class="card-number">Stage 03</div>
+            <h3>Correlation</h3>
+            <p>Multi-source correlation across firewall, IDS, passive network visibility, and endpoint events was introduced.</p>
           </article>
+
+          <article class="card project-card">
+            <div class="card-number">Stage 04</div>
+            <h3>Controlled response</h3>
+            <p>SOAR intake was introduced with automation deliberately constrained. No destructive automated response is permitted.</p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">Stage 05</div>
+            <h3>Analyst acknowledgment</h3>
+            <p>A structured acknowledgment workflow was introduced. Alert review is recorded and traceable, not assumed.</p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">Stage 06</div>
+            <h3>RBAC and access control</h3>
+            <p>Role separation and least-privilege access boundaries were implemented and validated across SOC platforms.</p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">Stage 07</div>
+            <h3>Evidence handling</h3>
+            <p>Evidence classification, lifecycle, chain-of-custody considerations, and public-safe redaction were formalized.</p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">Stage 08</div>
+            <h3>Retention policy</h3>
+            <p>Differentiated retention for raw telemetry and audit records was documented and validated across the stack.</p>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-number">Stage 09</div>
+            <h3>Audit-ready control pack</h3>
+            <p>RBAC, evidence handling, and retention controls were consolidated into a single integrated control reference.</p>
+          </article>
+        </div>
+
+        <div class="phase-callout">
+          <p class="section-kicker">Phase 1.5</p>
+          <h3>Zeek visibility hardening</h3>
+          <p>
+            Before publication, a targeted hardening update addressed a known timing gap in the Zeek
+            correlation layer. SOC/01 v1.7 introduced a two-pass Zeek lookup — immediate, then deferred
+            after 120 seconds — producing three classified outcomes: <code>zeek_seen_immediate</code>,
+            <code>zeek_seen_deferred</code>, and <code>zeek_no_match_after_delay</code>. Visibility
+            gap results are written into Graylog audit records through structured GELF writeback.
+          </p>
         </div>
       </div>
     </section>
@@ -123,17 +196,48 @@ import Layout from '../layouts/Layout.astro';
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <p class="section-kicker">Core Capabilities</p>
-          <h2 class="section-title">Operational capabilities validated in the build</h2>
+          <p class="section-kicker">Detection and Triage</p>
+          <h2 class="section-title">The technical center of the SOC</h2>
+          <p class="section-description">
+            At the center of SynapticSOC is the detection and triage pipeline. IDS alerts provide the
+            intake trigger. Firewall telemetry adds perimeter and pass/block context. Passive network
+            monitoring contributes flow and protocol visibility across the monitored segment. Endpoint
+            monitoring adds host-level detection and security context. External IP enrichment supports
+            reputation-aware review. Correlation and controlled automation then bring those signals into
+            a structured analyst workflow without permitting destructive automated response.
+          </p>
         </div>
 
         <div class="capability-grid">
-          <article class="card capability-card"><strong>Firewall telemetry</strong><p>pfSense events support network context and edge visibility.</p></article>
-          <article class="card capability-card"><strong>IDS alerts</strong><p>Snort and Suricata provide detection coverage at the network layer.</p></article>
-          <article class="card capability-card"><strong>Endpoint monitoring</strong><p>Wazuh provides host visibility, alerting, and compliance-oriented context.</p></article>
-          <article class="card capability-card"><strong>Zeek visibility</strong><p>LAN-side evidence helps validate whether observed traffic reached internal hosts.</p></article>
-          <article class="card capability-card"><strong>Graylog triage</strong><p>Parsing, streams, search, and dashboards support investigation workflow.</p></article>
-          <article class="card capability-card"><strong>n8n SOAR</strong><p>Automation supports enrichment, triage routing, acknowledgment, and evidence recording.</p></article>
+          <article class="card capability-card">
+            <strong>Firewall telemetry</strong>
+            <p>pfSense events support network boundary context, pass/block visibility, and edge-level review.</p>
+          </article>
+
+          <article class="card capability-card">
+            <strong>IDS alerting</strong>
+            <p>Snort and Suricata provide signature-based detection coverage at the network layer.</p>
+          </article>
+
+          <article class="card capability-card">
+            <strong>Passive network visibility</strong>
+            <p>Zeek contributes flow-level and protocol evidence across the monitored LAN segment.</p>
+          </article>
+
+          <article class="card capability-card">
+            <strong>Endpoint monitoring</strong>
+            <p>Wazuh provides host-level visibility, alerting, vulnerability findings, and compliance-oriented context.</p>
+          </article>
+
+          <article class="card capability-card">
+            <strong>Log aggregation and triage</strong>
+            <p>Graylog provides parsing, stream organization, enrichment, evidence review, and analyst-facing triage views.</p>
+          </article>
+
+          <article class="card capability-card">
+            <strong>Controlled SOAR</strong>
+            <p>n8n handles controlled intake, triage routing, analyst notification, acknowledgment, and audit writeback without autonomous destructive action.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -144,29 +248,28 @@ import Layout from '../layouts/Layout.astro';
           <p class="section-kicker">Control Model</p>
           <h2 class="section-title">Controls that make the SOC defensible</h2>
           <p class="section-description">
-            SynapticSOC is being shaped around operational controls that support role separation, 
-			traceability, analyst accountability, evidence retention, and compliance-oriented 
-			security operations.
+            SynapticSOC is governed by operational controls that support role separation, analyst
+            accountability, evidence traceability, retention documentation, and audit-ready visibility.
           </p>
         </div>
 
         <div class="project-grid">
           <article class="card project-card">
             <div class="card-number">Control 01</div>
-            <h3>RBAC</h3>
-            <p>Role separation and access boundaries across SOC tools.</p>
+            <h3>RBAC and access separation</h3>
+            <p>Least-privilege roles and validated access boundaries across Graylog, Wazuh, Grafana, n8n, and backend infrastructure.</p>
           </article>
 
           <article class="card project-card">
             <div class="card-number">Control 02</div>
             <h3>Evidence handling</h3>
-            <p>Defined handling of alert context, analyst decisions, and retained triage records.</p>
+            <p>Defined classification, lifecycle, chain-of-custody considerations, redaction rules, and public/private evidence separation.</p>
           </article>
 
           <article class="card project-card">
             <div class="card-number">Control 03</div>
-            <h3>Retention</h3>
-            <p>Retention rules and documentation for logs, alerts, evidence, and workflow records.</p>
+            <h3>Retention policy</h3>
+            <p>Differentiated retention for raw telemetry, audit records, workflow history, endpoint evidence, and documentation artifacts.</p>
           </article>
         </div>
       </div>
@@ -176,12 +279,42 @@ import Layout from '../layouts/Layout.astro';
       <div class="container">
         <div class="section-header">
           <p class="section-kicker">Limitations</p>
-          <h2 class="section-title">Clear boundaries and non-claims</h2>
+          <h2 class="section-title">Clear boundaries and honest non-claims</h2>
           <p class="section-description">
-            SynapticSOC does not claim certified compliance, managed detection and response coverage, 
-			enterprise high availability, or legal forensic chain of custody. Its value is in practical 
-			SOC engineering, transparent documentation, realistic constraints, and honest control development.
+            SynapticSOC does not claim certified compliance with any regulatory framework, legal-grade
+            forensic chain of custody, immutable archival storage, enterprise high availability,
+            commercial SOC replacement capability, managed detection and response maturity, or full
+            case management capability. Its value is in practical SOC engineering under real constraints,
+            transparent documentation, and honest control development.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">Documentation</p>
+          <h2 class="section-title">Read the full whitepaper</h2>
+          <p class="section-description">
+            The SynapticSOC whitepaper documents the architecture, component roles, detection and
+            visibility pipeline, controlled SOAR workflow, analyst acknowledgment model, RBAC, evidence
+            handling, retention policy, management dashboards, final control pack, limitations, and roadmap.
+            It is designed for public portfolio and GitHub use without exposing sensitive infrastructure
+            details or private validation artifacts.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="/docs/SynapticSOC_Whitepaper_v1.2.pdf" target="_blank" rel="noopener noreferrer">
+            Read the Whitepaper
+          </a>
+          <a class="button button-secondary" href="/architecture">
+            Explore Architecture
+          </a>
+          <a class="button button-secondary" href="/journal">
+            Read the Build Journal
+          </a>
         </div>
       </div>
     </section>
@@ -191,7 +324,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container footer-row">
       <span>© 2026 SynapticSOC</span>
       <div class="footer-links">
-        <a href="https://github.com/mbarizvy" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/mbarizvy/synaptic-soc-soar" target="_blank" rel="noreferrer">GitHub</a>
         <a href="/architecture">Architecture</a>
         <a href="/journal">Build Journal</a>
         <a href="/about">About</a>
